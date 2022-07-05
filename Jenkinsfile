@@ -1,16 +1,6 @@
 pipeline {
-    agent { label 'pipes-docker-agent' }
+    agent any
     environment {  
-        // Azure Managed Identity
-        //AZURE_MI = credentials('azure-mi')
-
-        // use your Jenkins MI
-        //JENKINS_USER_MI = 'a2711b6c-use-your-own-fa539d95817b'
-
-        // Sandbox ACR
-        REGISTRY_NAME = "gacr2nsandbox1"
-        HELM_REGISTRY = "${REGISTRY_NAME}.azurecr.io"
-
         // Path to helm chart
         HELM_CHART = "demo-chart" 
         HELM_REPO = "gap/Pofremu/demo-helm-repo"
